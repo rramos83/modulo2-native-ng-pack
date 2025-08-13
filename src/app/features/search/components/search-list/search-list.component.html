@@ -1,0 +1,32 @@
+<ActionBar title="Buscar"></ActionBar>
+
+<StackLayout class="p-16">
+  <!-- Formulario con two-way binding y validador personalizado -->
+  <StackLayout>
+    <TextField [(ngModel)]="term" name="term" hint="Buscar..." required appMinlen="2" (textChange)="onSearchChange()"></TextField>
+    <Label *ngIf="term.length>0 && term.length<2" text="Mínimo 2 caracteres" class="text-warn"></Label>
+  </StackLayout>
+
+  <!-- Pull to refresh envolviendo el ListView -->
+  <PullToRefresh (refresh)="onRefresh($event)">
+    <ListView [items]="filtered" class="list-group">
+      <ng-template let-item="item">
+        <!-- Plantilla anidada con FlexboxLayout -->
+        <FlexboxLayout class="list-item" flexDirection="row" alignItems="center" (tap)="open(item)">
+          <Image src="res://ic_search" width="28" height="28" class="mr-8"></Image>
+          <StackLayout class="flex-1">
+            <Label [text]="item.title" class="title"></Label>
+            <Label [text]="item.subtitle + ' · ' + (item.category || 'Sin categoría')" class="subtitle"></Label>
+          </StackLayout>
+
+          <!-- Botón de categoría: abre diálogo action() -->
+          <Button text="Categoría" (tap)="pickCategory(item)"></Button>
+
+          <!-- Icono con gesto y animación -->
+          <Label text="★" class="fav-icon" [class.fav]="item.fav"
+                 (doubleTap)="toggleFav($event, item)"></Label>
+        </FlexboxLayout>
+      </ng-template>
+    </ListView>
+  </PullToRefresh>
+</StackLayout>

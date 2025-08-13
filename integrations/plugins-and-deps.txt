@@ -1,0 +1,10 @@
+[DEPENDENCIAS] Instala los plugins requeridos:
+
+npm i @nativescript-community/ui-pulltorefresh
+# Opción de toast (elige una):
+npm i @nativescript/toast
+# o
+npm i @triniwiz/nativescript-toasty
+
+# En app.module.ts o main.ts importa el registro del elemento:
+import './plugins-setup';

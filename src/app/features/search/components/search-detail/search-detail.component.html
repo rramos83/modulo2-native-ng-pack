@@ -1,0 +1,6 @@
+<ActionBar title="Detalle"></ActionBar>
+<StackLayout class="p-16">
+  <Label [text]="'ID: ' + item?.id"></Label>
+  <Label [text]="'Título: ' + item?.title"></Label>
+  <Label [text]="'Categoría: ' + (item?.category || 'Sin categoría')"></Label>
+</StackLayout>

@@ -1,0 +1,11 @@
+[INSTRUCCIONES] Agrega el módulo lazy 'search' a tu app-routing.module.ts:
+
+import './plugins-setup'; // asegura el registro de PullToRefresh
+
+export const routes: Routes = [
+  // ...otras rutas
+  {
+    path: 'search',
+    loadChildren: () => import('./features/search/search.module').then(m => m.SearchModule)
+  }
+];

@@ -1,0 +1,8 @@
+.list-item { padding: 10; border-bottom-width: 1; border-bottom-color: #ddd; }
+.title { font-weight: bold; }
+.subtitle { font-size: 12; opacity: 0.7; }
+.flex-1 { width: 1; flex-grow: 1; }
+.mr-8 { margin-right: 8; }
+.fav-icon { margin-left: 8; font-size: 20; color: #999; }
+.fav-icon.fav { color: #ff7043; }
+.text-warn { color: #d9534f; }

@@ -1,0 +1,7 @@
+[INSTRUCCIONES] En tu Drawer (carpeta src/app/modulo1), agrega el item 'Search':
+
+navigationItems = [
+  { title: 'Home', route: '/home' },
+  // ...
+  { title: 'Search', route: '/search' }
+];
